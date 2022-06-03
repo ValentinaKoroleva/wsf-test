@@ -1,4 +1,6 @@
 import './App.css';
+import Tab from './components/Tab';
+const url = `https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=${process.env.REACT_APP_API_KEY}`
 
 function App() {
   return (
@@ -7,6 +9,7 @@ function App() {
       <header className="App-header">
       </header>
       {/* approximate scheme */}
+      <Tab name="Valya" url={url}></Tab>
       <search></search>
       <tabs>
         <tab class="current">

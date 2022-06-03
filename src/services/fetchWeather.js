@@ -1,15 +1,15 @@
+import { useState, useEffect } from "react";
 
-
-function MyComponent() {
+function Weather(props) {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
-  
+    const urlWeather = props.url
     // Примечание: пустой массив зависимостей [] означает, что
     // этот useEffect будет запущен один раз
     // аналогично componentDidMount()
     useEffect(() => {
-      fetch("http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}")
+      fetch(urlWeather)
         .then(res => res.json())
         .then(
           (result) => {
@@ -23,7 +23,7 @@ function MyComponent() {
             setError(error);
           }
         )
-    }, [])
+    }, [urlWeather])
   
     if (error) {
       return <div>Ошибка: {error.message}</div>;
@@ -31,13 +31,16 @@ function MyComponent() {
       return <div>Загрузка...</div>;
     } else {
       return (
-        <ul>
-          {items.map(item => (
-            <li key={item.id}>
-              {item.name} {item.price}
-            </li>
-          ))}
-        </ul>
+        <div>{JSON.stringify(items)}</div>
+        // <ul>
+        //   {items.map(item => (
+        //     <li key={item.id}>
+        //       {item.name} {item.price}
+        //     </li>
+        //   ))}
+        // </ul>
       );
     }
   }
+
+export default Weather
