@@ -1,11 +1,8 @@
-import Weather from '../services/fetchWeather'
+import Card from './Card'
 
 function Tab(props) {
     return (
-        <div>
-        <h1>Привет, {props.name}</h1>
-        <Weather url={props.url}></Weather>
-        </div>
+        <Card url={props.url}></Card>
     );
 }
 
