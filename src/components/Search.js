@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import CityList from "./CityList";
+import SelectCity from "./SelectCity";
 function Search() {
     const [city, setCity] = useState([]);
     const [submitted, setSubmitted] = useState(false);
@@ -52,7 +52,7 @@ function Search() {
                     <i className="fa fa-search"></i>
                 </button>
             </form>
-            <CityList items={items} />
+            <SelectCity items={items} />
         </div>
     );
 
