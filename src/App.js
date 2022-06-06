@@ -8,25 +8,6 @@ function App() {
   return (
     <div className="App">
       <Search></Search>
-      {/* <Tab url={url}></Tab> */}
-      {/* approximate scheme 
-      <tabs>
-        <tab class="current">
-          <city></city>
-          <country></country>
-          <solo-card></solo-card>
-        </tab>
-        <tab class="7d">
-          <city></city>
-          <country></country>
-          <card></card>
-          <card></card>
-          <card></card>
-          <card></card>
-          <card></card>
-        </tab>
-      </tabs>
-    */}
     </div>
   );
 }

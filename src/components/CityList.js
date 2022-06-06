@@ -3,7 +3,7 @@ import SelectedCity from "./SelectedCity";
 import Tabs from "./Tabs";
 function CityList(props) {
     const [open, setOpen] = useState(false)
-    const [selected, setSelected] = useState({ city: '', state: '', country: '' })
+    const [selected, setSelected] = useState({ city: '', state: '', country: '', lat: 33.44, lon: -94.04 })
     const data = props.items
     let cities = [];
     let listItems = [];
@@ -14,8 +14,6 @@ function CityList(props) {
         }
         cities.push(city)
     }
-
-    console.log(props.items)
 
     useEffect(() => {
         setOpen(false)
@@ -47,8 +45,8 @@ function CityList(props) {
             <ul className="autocomplete">
                 {listItems}
             </ul>
-            <Tabs></Tabs>
-            <SelectedCity selected={selected} />
+            <Tabs selected={selected}></Tabs>
+            {/* <SelectedCity selected={selected} /> */}
         </div>
     );
 }
