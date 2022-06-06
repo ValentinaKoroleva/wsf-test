@@ -27,7 +27,9 @@ function CityList(props) {
         let city = {
             city: data[index].name,
             state: data[index].state || "",
-            country: country
+            country: country,
+            lat: data[index].lat,
+            lon:data[index].lon
         }
         setSelected(city)
         // take lat long

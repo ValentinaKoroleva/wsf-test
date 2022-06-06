@@ -14,7 +14,7 @@ function Tabs(props){
             <button id="0" className="toggle-button" onClick={openTab}>CURRENT</button>
             <button id="1" className="toggle-button" onClick={openTab}>7 DAY FORECAST</button>
             <SelectedCity selected={props.selected} />
-            <Card type={active} />
+            <Card type={active} selected={props.selected} />
         </div>
     );
 }
