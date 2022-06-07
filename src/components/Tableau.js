@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import SoloCard from './SoloCard';
 import Card from './Card';
+import env from '../assets/api-key.json'
 function Tableau(props) {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [exclude, setExclude] = useState('');
-  const [url, setUrl] = useState(`https://api.openweathermap.org/data/2.5/onecall?lat=${props.selected.lat}&lon=${props.selected.lon}&units=metric&exclude=hourly,minutely,alerts&appid=${process.env.REACT_APP_API_KEY}`);
+  const [url, setUrl] = useState(`https://api.openweathermap.org/data/2.5/onecall?lat=${props.selected.lat}&lon=${props.selected.lon}&units=metric&exclude=hourly,minutely,alerts&appid=${env.REACT_APP_API_KEY}`);
   const [items, setItems] = useState({weather: {main:"Clear", icon: "10d"}, temp: "20.0"});
 
   useEffect(() => {
@@ -14,7 +15,7 @@ function Tableau(props) {
   }, [props])
 
   useEffect(() => {
-    setUrl(`https://api.openweathermap.org/data/2.5/onecall?lat=${props.selected.lat}&lon=${props.selected.lon}&units=metric&exclude=hourly,minutely,alerts&appid=${process.env.REACT_APP_API_KEY}`)
+    setUrl(`https://api.openweathermap.org/data/2.5/onecall?lat=${props.selected.lat}&lon=${props.selected.lon}&units=metric&exclude=hourly,minutely,alerts&appid=${env.REACT_APP_API_KEY}`)
   }, [props])
 
 

@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import SelectCity from "./SelectCity";
+import env from '../assets/api-key.json'
+
 function Search() {
     const [city, setCity] = useState([]);
     const [submitted, setSubmitted] = useState(false);
@@ -22,7 +24,7 @@ function Search() {
     }
     useEffect(() => {
         if (changed && city!=='') {
-            const urlCoords = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=10&appid=${process.env.REACT_APP_API_KEY}`
+            const urlCoords = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=10&appid=${env.REACT_APP_API_KEY}`
             fetch(urlCoords)
                 .then(
                     (res) => res.json(),
@@ -32,7 +34,6 @@ function Search() {
                     (result) => {
                         setIsLoaded(true);
                         setItems(result);
-                        console.log(result)
                         setSubmitted(false)
                     },
                     (error) => {

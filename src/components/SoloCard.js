@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import { icons } from "react-icons";
 
 function SoloCard(props) {
     if (typeof props.items != "undefined" && props.items.length !== 8) {
