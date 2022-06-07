@@ -1,5 +1,4 @@
 import './App.css';
-import Tab from './components/Tab';
 import Search from './components/Search';
 import 'font-awesome/css/font-awesome.min.css';
 

@@ -84,3 +84,13 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 .toggle-button:focus{
   background-color: #e7e7e7;
 }
+/* Cards */
+.cards-week{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 1%;
+
+}
+.cards{
+}

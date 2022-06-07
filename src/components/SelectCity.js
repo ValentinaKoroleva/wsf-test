@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import SelectedCity from "./SelectedCity";
 import Tabs from "./Tabs";
 function SelectCity(props) {
     const [open, setOpen] = useState(false)
@@ -48,7 +47,6 @@ function SelectCity(props) {
                 {listItems}
             </ul>
             <Tabs selected={selected}></Tabs>
-            {/* <SelectedCity selected={selected} /> */}
         </div>
     );
 }
